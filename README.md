@@ -1,21 +1,59 @@
 # Project
 
 ## Introduction
-In this project we experimented with language and peptide data. We have two notebooks which contain the code of our experiments, `language_discrimination.ipynb` and `calculations.ipynb` respectively.
+In this project we experimented with language and peptide data. We have two notebooks which contain the code of our experiments:
 
+- `language_discrimination.ipynb` for the language classification experiments.
+- `calculations.ipynb` for the foreign peptide detection expirements.
 
 For this project we created 3 different datasets to train a negative selection algorithm. The code for each is under the following files:
 
-- `create_random_dataset.py`: Creates the random dataset
-- `evolutionary_algorithm.py`: Code to run the evolutionary algorithm and create the respective dataset
-- `greedy_algorithm.py`: Code to run a greedy algorithm and create the respective dataset
+- `create_random_dataset.py`: Creates the random dataset.
+- `evolutionary_algorithm.py`: Code to run the evolutionary algorithm and create the respective dataset.
+- `greedy_algorithm.py`: Code to run a greedy algorithm and create the respective dataset.
 
-The file `neg_sel.py` contains the code to run the negative selection algorithm, and it uses `negsel2.jar` to achieve this
+The file `neg_sel.py` contains the code to run the negative selection algorithm, and it uses `negsel2.jar` to achieve this.
+
+## Requirements
+- Python 3.8+
+- Java
+- Jupyter Notebook
+### Python Packages
+- numpy
+- pandas
+- matplotlib
+- scikit-learn
+- tqdm
+
+### Tool
+- as mentioned before `negsel2.jar` is required to run the `neg_sel.py` code. `Java` is required to run this `.jar` file.
 
 ## How to run
 
+1. Install Requirements
+2. Run the notebooks, the notebooks are independent of eachother and can be ran in any other
+    
+   2.a. Run the `language_discrimination.ipynb` notebook  
+   - It’s possible to run all cells, this will:  
+     - Create datasets  
+     - Run negative selection algorithm  
+     - Save its results  
+     - Generate ROC plots
+    
+   2.b. Run the `calculations.ipynb` notebook  
+   - It’s possible to run all cells, this will:  
+     - Load peptide sets  
+     - Run Negative Selection Algorithm  
+     - Save its results  
+     - Generate performance plots  
+4. View the results  
+   - Language discrimination: `data/languages/results/`  
+   - Peptide detection: `data/results/`
+
+
+## Internal workings
 ### Language Discrimination
-In order to run the language discrimination experiments you need to run the `language_discrimination.ipynb`. The notebook creates the 3 datasets, runs the negative selection algorithm and create plots to evaluate the performance. 
+When you run the `language_discrimination.ipynb` notebook it creates the 3 datasets, runs the negative selection algorithm and create plots to evaluate the performance. 
 
 The code under the section Dataset Creation generates the datasets we used for these experiments. The files are stored under `data/languages/`. All the files for the english data are under `data/languages/english/` while the rest are under `data/languages/other/`. We then create the three self sets.
 
